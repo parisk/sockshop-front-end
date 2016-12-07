@@ -4,6 +4,7 @@ ENV PORT 8079
 
 # Prepare app directory
 WORKDIR /usr/src/app
+RUN npm install -g nodemon
 COPY package.json /usr/src/app/
 RUN npm install
 
