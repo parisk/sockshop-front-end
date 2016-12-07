@@ -89,12 +89,12 @@
       },
       function (item, callback) {
         var options = {
-          uri: endpoints.cartsUrl + "/" + custId + "/items",
+          uri: endpoints.wishlistUrl + "/wishlists/" + custId + "/items/",
           method: 'POST',
           json: true,
-          body: { itemId: item.id, unitPrice: item.price }
+          body: { product: item.id }
         };
-        console.log("POST to carts: " + options.uri + " body: " + JSON.stringify(options.body));
+        console.log("POST to wishlist: " + options.uri + " body: " + JSON.stringify(options.body));
         request(options, function (error, response, body) {
           if (error) {
             callback(error)
